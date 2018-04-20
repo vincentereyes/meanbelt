@@ -1,0 +1,21 @@
+<h5>Know of a pet needing a home?</h5>
+<form (submit)="onSubmit()">
+	<label>Pet Name:</label><br>
+	<label *ngIf="(errors.name)">{{ errors.name.message }}</label><br>
+    <input type="text" name="newPet.name" [(ngModel)]="newPet.name" /><br>
+    <label>Pet Type:</label><br>
+    <label *ngIf="(errors.type)">{{ errors.type.message }}</label><br>
+    <input type="text" name="newPet.type" [(ngModel)]="newPet.type" /><br>
+    <label>Description: </label><br>
+    <label *ngIf="(errors.desc)">{{ errors.desc.message }}</label><br>
+    <input type="text" name="newPet.desc" [(ngModel)]="newPet.desc" /><br>
+    <label>Skills: (Optional)</label><br>
+    <label>Skill 1: </label>
+    <input type="text" name="newPet.skill1" [(ngModel)]="newPet.skill1" /><br>
+    <label>Skill 2: </label>
+    <input type="text" name="newPet.skill2" [(ngModel)]="newPet.skill2" /><br>
+    <label>Skill 3: </label>
+    <input type="text" name="newPet.skill3" [(ngModel)]="newPet.skill3" /><br>
+    <input type="submit" value="Add pet" />
+</form>
+<button [routerLink]="['']">Cancel</button>

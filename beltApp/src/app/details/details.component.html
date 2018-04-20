@@ -1,0 +1,11 @@
+
+<h3>Details about {{ pet.name }} <a [routerLink]="['']">Home</a></h3>
+<p>Pet type: {{ pet.type }}</p>
+<p>Description: {{ pet.desc }}</p>
+<h3>Skills:</h3>
+<p *ngIf="!(pet.skill1 == '')">{{ pet.skill1 }}</p>
+<p *ngIf="!(pet.skill2 == '')">{{ pet.skill2 }}</p>
+<p *ngIf="!(pet.skill3 == '')">{{ pet.skill3 }}</p>
+<p>Likes: {{ pet.likes }}</p>
+<button (click)="like(pet._id)" [disabled]='clicked'>Like this pet</button>
+<button (click)="adoptPet(pet._id)">Adopt this pet!</button>
