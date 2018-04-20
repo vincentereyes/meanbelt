@@ -44,10 +44,11 @@ app.post('/pet', function(req, res) {
     pet.skill3 = req.body.skill3;
     pet.save(function(err) {
     if (err) {
-    	console.log(err.name)
     		if(err.name == "ValidationError"){
+    			console.log(pet.errors)
     			res.json({message: "Error", error: pet.errors})
     		} else {
+    			console.log(err)
     			res.json({message: "Unique Error", error: err})
     		}
     	} else {

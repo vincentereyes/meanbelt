@@ -36,7 +36,7 @@ export class NewComponent implements OnInit {
   			console.log(data)
   			this.errors = data["error"]
   		}
-  		if((data as any).message == "Unique Error"){
+  		else if((data as any).message == "Unique Error"){
   			console.log(data)
   			this.errors.name.message = "Pet already exists";
   		}
